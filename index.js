@@ -1,10 +1,11 @@
-const bodyParser = require('body-parser');
-
 const express = require('express');
+const patientsRoutes = require('./Patients/patientsRoutes');
 
 const app = express();
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: false }));
+
+app.use('/patients', patientsRoutes);
 
 const PORT = 3000;
 
